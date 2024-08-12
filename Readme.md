@@ -12,7 +12,7 @@
 </p>
 
 
-**Himitsu is a Online/Offline Red Team tool focused on Password Cracking and Vulnerabilities**
+**Himitsu is a Online/Offline Red Team tool focused on Password Cracking and Web Vulnerabilities**
 
 ## DISCLAIMER
 

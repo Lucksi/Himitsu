@@ -25,7 +25,6 @@ function Packet-Installer {
     sudo apt-get install unrar -y &> /dev/null |
     sudo apt-get install rar -y &> /dev/null |
 	sudo apt-get install tor -y &> /dev/null |
-    sudo pip3 install -r requirements.txt &> /dev/null |
 	printf "${GREEN}\n\n[+]${WHITE}Packets Installed"
 	sleep 5
 }

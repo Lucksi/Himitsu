@@ -12,7 +12,7 @@
 </p>
 
 
-**Himitsu is a Online/Offline Red Team tool focused on Password Cracking and Web Vulnerabilities**
+**Himitsu is a Online/Offline Red Team tool focused on Password Cracking and Vulnerabilities**
 
 ## DISCLAIMER
 
@@ -34,6 +34,7 @@ cd Himitsu
 sudo apt-get update
 sudo chmod +x install.sh
 sudo bash install.sh
+pip3 install -r requirements.txt
 ```
 
 ## Installation (Venv):

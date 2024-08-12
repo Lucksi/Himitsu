@@ -12,7 +12,7 @@ class Get:
     def Type(string):
         md5regex = r"\b(?!^[\d]*$)(?!^[a-fA-F]*$)([a-f\d]{32}|[A-F\d]{32})\b"
         base64regex = r"(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)"
-        base32regex = r"/^([A-Z2-7=]{8})+$/"#r"^(?:[A-Z2-7]{8})*(?:[A-Z2-7]{2}={6}|[A-Z2-7]{4}={4}|[A-Z2-7]{5}={3}|[A-Z2-7]{7}=)?$"
+        base32regex = r"/^([A-Z2-7=]{8})+$/"
         sha1regex = r"^[a-fA-F0-9]{40}$"
         sha224regex = r"^[a-fA-F0-9]{56}$"
         sha256regex = r"^[a-fA-F0-9]{64}$"

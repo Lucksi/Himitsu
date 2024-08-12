@@ -64,12 +64,12 @@ python3 main.py
 
 ## Configuration Options:
 
-| Option name | Type | Description |
-| ------------- | ------------- | -------------
-| `USERAGENT_PATH` | String | File path of the Useragent list
-| `TOR_PROXY`  | True/False | Making web request throught Tor network
-| `USERAGENT_CHANGE` | True/False | Making your Useragent different after a certain number of requests
-| `BREAK_TIME` | Number | Number of requests to reach in order to change Useragent
+| Option name | Type | Description |  Default Value |  
+| ------------- | ------------- | ------------- | ------------- | 
+| `USERAGENT_PATH` | String | File path of the Useragent list | Useragent/List.txt
+| `TOR_PROXY`  | True/False | Making web request throught Tor network | False
+| `USERAGENT_CHANGE` | True/False | Making your Useragent different after a certain number of requests | False
+| `BREAK_TIME` | Number | Number of requests to reach in order to change Useragent | 5
 
 ## Features:
 

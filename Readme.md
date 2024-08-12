@@ -83,20 +83,20 @@ python3 main.py
 
 ## Current Hashing and Encoding Algorithm Supported:
 
-| Name |
-| -------------
-| `BASE64` |
-| `BASE32` |
-| `MD5`  |
-| `SHA1`  | 
-| `SHA224` |
-| `SHA3-224`  |
-| `SHA256`  |
-| `SHA3-256`  |
-| `SHA384`  |
-| `SHA3-384`  |
-| `SHA512`  |
-| `SHA3-512`  |
+| Name | Recognition |
+| ------------- |  ------------- |
+| `BASE64` | :heavy_check_mark: |
+| `BASE32` |   :heavy_check_mark: |
+| `MD5`  | :heavy_check_mark: |
+| `SHA1`  | :heavy_check_mark: |
+| `SHA224` | :heavy_check_mark: |
+| `SHA3-224`  | :heavy_check_mark: |
+| `SHA256`  | :heavy_check_mark: |
+| `SHA3-256`  | :heavy_check_mark: |
+| `SHA384`  | :heavy_check_mark: |
+| `SHA3-384`  | :heavy_check_mark: |
+| `SHA512`  | :heavy_check_mark: |
+| `SHA3-512`  | :heavy_check_mark: |
 
 ## Current Offline Cracking Options:
 

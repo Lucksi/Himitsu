@@ -5,7 +5,7 @@
 
 import os
 from Core import Colors
-import main
+from Core import Menu
 
 class Size:
     
@@ -20,4 +20,4 @@ class Size:
         else:
             print(Colors.Color.RED + "[-]" + Colors.Color.WHITE + "No text file found in the {} folder".format(name))
             inp = input("Press enter to continue...")
-            main.Menu()
+            Menu.Display.Main()

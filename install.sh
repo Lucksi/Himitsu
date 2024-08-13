@@ -63,7 +63,7 @@ function installer {
 	Configuration
 	sleep 5
 	printf "${YELLOW}\n\n[v]${WHITE}Himitsu Installed Successfully\n\n"
-    exit 1
+    	exit 1
 }
 
 if [ $(id -u) -ne 0 ]; then

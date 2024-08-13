@@ -54,7 +54,6 @@ class Local:
     @staticmethod
     def Password():
         filesfolder = "Passwords/Default/"
-        Controller.Size.Folder(filesfolder)
         found = False
         attempt = 0
         file_names = []
@@ -78,6 +77,7 @@ class Local:
             if type == "base64" or type == "base32":
                 foundpass = Local.base64_decode(string,type)
             else:
+                Controller.Size.Folder(filesfolder,"Pwd")
                 if found == False:
                     for name in file_names:
                         completefile = filesfolder + name
@@ -113,7 +113,9 @@ class Local:
     @staticmethod
     def File():
         filesfolder = "Passwords/Default/"
-        Controller.Size.Folder(filesfolder)
+        filesfolder2 = "Files"
+        Controller.Size.Folder(filesfolder,"Pwd")
+        Controller.Size.Folder(filesfolder2,"Files")
         found = False
         attempt = 0
         file_names = []
@@ -203,7 +205,7 @@ class Local:
                                 f.close()
                                 break
                         else:
-                            print(Colors.Color.RED + "\n[!]" + Colors.Color.WHITE + "Archive {} doesn't exist".format(Colors.Color.GREEN + string))
+                            print(Colors.Color.RED + "\n[!]" + Colors.Color.WHITE + "Archive {} doesn't exist on Folder: Files".format(Colors.Color.GREEN + string))
                             break
             inp = input(Colors.Color.WHITE + "\nPress enter to continue") 
                                 
@@ -212,7 +214,7 @@ class Online:
     @staticmethod
     def Password():
         filesfolder = "Passwords/Default/"
-        Controller.Size.Folder(filesfolder)
+        Controller.Size.Folder(filesfolder,"Pwd")
         found = False
         attempt = 1
         file_names = []

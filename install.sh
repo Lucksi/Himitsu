@@ -21,9 +21,9 @@ function Packet-Installer {
 	sudo apt-get install git -y &> /dev/null |
 	sudo apt-get install python3 -y &> /dev/null |
 	sudo apt-get install p7zip-full -y &> /dev/null |
-    sudo apt-get install python3-pip -y &> /dev/null |
-    sudo apt-get install unrar -y &> /dev/null |
-    sudo apt-get install rar -y &> /dev/null |
+    	sudo apt-get install python3-pip -y &> /dev/null |
+    	sudo apt-get install unrar -y &> /dev/null |
+    	sudo apt-get install rar -y &> /dev/null |
 	sudo apt-get install tor -y &> /dev/null |
 	printf "${GREEN}\n\n[+]${WHITE}Packets Installed"
 	sleep 5
@@ -39,7 +39,7 @@ function Configuration {
 	echo "TOR_PROXY = False">>Configuration.ini
 	echo "USERAGENT_CHANGE = False">>Configuration.ini
 	echo "BREAK_TIME = 5">>Configuration.ini
-	printf "${BLUE}\n[I]${WHITE}Default Configurations:\n"
+	printf "${BLUE}\n\n[I]${WHITE}Default Configurations:\n"
 	printf "${GREEN}\n[+]${WHITE}USERAGENT_PATH = ${GREEN}Useragent/List.txt"
 	printf "${GREEN}\n[+]${WHITE}TOR_PROXY = ${GREEN}False"
 	printf "${GREEN}\n[+]${WHITE}USERAGENT_CHANGE = ${GREEN}False"
@@ -48,26 +48,27 @@ function Configuration {
 }
 
 function installer {
-	cd Passwords
-	cd Default
-	rm Untitled.txt &> /dev/null |
-	cd ../
-	cd ../
-	cd ../
-    printf "${BLUE}\n\n[I]${WHITE}Installing Himitsu\n"
+	filename='Passwords/Default/Untitled.txt'
+	if [ -f  $filename ]; then
+		cd Passwords
+		cd Default
+		rm Untitled.txt &> /dev/null |
+		cd ../
+		cd ../
+		cd ../
+	fi
+    	printf "${BLUE}\n\n[I]${WHITE}Installing Himitsu\n"
 	sleep 5
-    Packet-Installer
-	pwd
+    	Packet-Installer
 	Configuration
 	sleep 5
 	printf "${YELLOW}\n\n[v]${WHITE}Himitsu Installed Successfully\n\n"
     exit 1
 }
 
-if [ $(id -u) -ne 0 ];
-	then
+if [ $(id -u) -ne 0 ]; then
 	clear
-    Banner
+    	Banner
 	printf "${RED}\n\n[!]${WHITE}This Installer should be run as root try to execute the program with sudo\n\n"
 	exit 1
 fi

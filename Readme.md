@@ -82,13 +82,19 @@ python3 main.py
 | `Html Forms Detection`  | Gathering all the html forms in a webpage |
 | `Automated http request`  | Creation of the url and setting the comunication method for making a web request|
 
+## Current Form info Gathered:
+
+| Option name | Description |
+| ------------- | ------------- |
+| `Action Detection`  | Recognizion of the action url |
+| `Method Detection`  | Recognizion of the method used in order to transfer data (POST/GET) |
+| `Parameters`  | Recognizion of Parameter name (and description when possible) |
+
 <br>
 
 | Form Detecion | Parameters Detection |
 | ------------- | ------------- |
 | <img src = "Screenshot/Screenshot_Forms.png">  | <img src = "Screenshot/Screenshot_Details.png" height = 150px width = 450px>|
-
-
 
 ## Current Hashing and Encoding Algorithm Supported:
 
@@ -116,15 +122,6 @@ python3 main.py
 | `Rar File`
 | `7zip File`
 | `Pdf File`
-
-
-## Current Form info Gathered:
-
-| Option name | Description |
-| ------------- | ------------- |
-| `Action Detection`  | Recognizion of the action url |
-| `Method Detection`  | Recognizion of the method used in order to transfer data (POST/GET) |
-| `Parameters`  | Recognizion of Parameter name (and description when possible) |
 
 ## Current Attacks/Decoding:
 

@@ -86,9 +86,9 @@ python3 main.py
 
 | Option name | Description |
 | ------------- | ------------- |
-| `Action Detection`  | Recognizion of the action url |
-| `Method Detection`  | Recognizion of the method used in order to transfer data (POST/GET) |
-| `Parameters`  | Recognizion of Parameter name (and description when possible) |
+| `Action Detection`  | Recognition of the action url |
+| `Method Detection`  | Recognition of the method used in order to transfer data (POST/GET) |
+| `Parameters`  | Recognition of Parameter name (and description when possible) |
 
 <br>
 

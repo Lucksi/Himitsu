@@ -86,7 +86,7 @@ python3 main.py
 
 | Form Detecion | Parameters Detection |
 | ------------- | ------------- |
-| <img src = "Screenshot/Screenshot_Forms.png">  | <img src = "Screenshot/Screenshot_Details.png" height = 200px width = 450px>|
+| <img src = "Screenshot/Screenshot_Forms.png">  | <img src = "Screenshot/Screenshot_Details.png" height = 150px width = 450px>|
 
 
 

@@ -82,6 +82,14 @@ python3 main.py
 | `Html Forms Detection`  | Gathering all the html forms in a webpage |
 | `Automated http request`  | Creation of the url and setting the comunication method for making a web request|
 
+<br>
+
+| Form Detecion | Parameters Detection |
+| ------------- | ------------- |
+| <img src = "Screenshot/Screenshot_Forms.png">  | <img src = "Screenshot/Screenshot_Details.png" height = 200px width = 450px>|
+
+
+
 ## Current Hashing and Encoding Algorithm Supported:
 
 | Name | Recognition |

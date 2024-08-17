@@ -6,33 +6,49 @@
 import os
 from Core import Colors
 from Core import Menu
+from time import sleep
 
 class Size:
     
     @staticmethod
-    def Folder(name,type,lists):
+    def Wordlist(name,lists):
         count = 0
-        if type == "Pwd":
-            error = "Wordlist found or the only Wordlist found is an empty file (accepted only .txt files)"
-            for file in os.listdir(name):
-                if file.endswith(".txt"):
-                    filename = "Passwords/Default/" + file
-                    f = open(filename,"r",newline=None)
-                    reader = f.readline()
-                    for line in reader:
-                        count = count +1
-                    if count > 0:
-                        lists.append(file)
-                    else:
-                        pass
+        print(Colors.Color.BLUE + "\n[I]" + Colors.Color.WHITE + "Checking valide wordlist...\n")
+        sleep(3)
+        error = "Wordlist found or the only Wordlist found is an empty file (accepted only .txt files)"
+        for file in os.listdir(name):
+            if file.endswith(".txt"):
+                count1 = 0
+                filename = "Passwords/Default/" + file
+                f = open(filename,"r",newline=None)
+                reader = f.readlines()
+                for line in reader:
+                    count1 = count1 +1
+                if count1 > 0:
+                    lists.append(file)
+                    valid = Colors.Color.GREEN + "True"
+                else:
+                    valid = Colors.Color.RED + "False"
+                print(Colors.Color.BLUE + "[I]" + Colors.Color.WHITE + "Filename:{} {}".format(file,valid))
+        if len(lists) > 0:
+            count = 1
+            pass
         else:
-            error = "Archive/File found (accepted only .zip,.rar,.7z and .pdf files)"
-            for file in os.listdir(name):
-                if file.endswith(".zip") or file.endswith(".rar") or file.endswith(".7z") or file.endswith(".pdf"):
-                    count = count + 1
+            print(Colors.Color.RED + "\n[-]" + Colors.Color.WHITE + "No {} in the {} folder\n".format(error,Colors.Color.GREEN + name + Colors.Color.WHITE))
+            inp = input("Press enter to continue...")
+            #Menu.Display.Main()
+        return count
+
+    @staticmethod
+    def Files(name):
+        count = 0
+        error = "Archive/File found (accepted only .zip,.rar,.7z and .pdf files)"
+        for file in os.listdir(name):
+            if file.endswith(".zip") or file.endswith(".rar") or file.endswith(".7z") or file.endswith(".pdf"):
+                count = count + 1
         if count > 0:
             pass
         else:
             print(Colors.Color.RED + "\n[-]" + Colors.Color.WHITE + "No {} in the {} folder\n".format(error,Colors.Color.GREEN + name + Colors.Color.WHITE))
             inp = input("Press enter to continue...")
-            Menu.Display.Main()
+        return count

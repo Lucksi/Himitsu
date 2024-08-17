@@ -43,9 +43,12 @@ class Size:
     def Files(name):
         count = 0
         error = "Archive/File found (accepted only .zip,.rar,.7z and .pdf files)"
+        print(Colors.Color.BLUE + "\n[I]" + Colors.Color.WHITE + "Checking files...\n")
         for file in os.listdir(name):
             if file.endswith(".zip") or file.endswith(".rar") or file.endswith(".7z") or file.endswith(".pdf"):
                 count = count + 1
+                size = os.stat("Files/" + file)
+                print(Colors.Color.BLUE + "[I]" + Colors.Color.WHITE + "Filename:{} {} bytes".format(file,Colors.Color.GREEN + str(size.st_size) + Colors.Color.WHITE))
         if count > 0:
             pass
         else:

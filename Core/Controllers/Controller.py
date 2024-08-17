@@ -10,13 +10,21 @@ from Core import Menu
 class Size:
     
     @staticmethod
-    def Folder(name,type):
+    def Folder(name,type,lists):
         count = 0
         if type == "Pwd":
-            error = "Wordlist found (accepted only .txt files)"
+            error = "Wordlist found or the only Wordlist found is an empty file (accepted only .txt files)"
             for file in os.listdir(name):
                 if file.endswith(".txt"):
-                    count = count + 1
+                    filename = "Passwords/Default/" + file
+                    f = open(filename,"r",newline=None)
+                    reader = f.readline()
+                    for line in reader:
+                        count = count +1
+                    if count > 0:
+                        lists.append(file)
+                    else:
+                        pass
         else:
             error = "Archive/File found (accepted only .zip,.rar,.7z and .pdf files)"
             for file in os.listdir(name):
@@ -25,6 +33,6 @@ class Size:
         if count > 0:
             pass
         else:
-            print(Colors.Color.RED + "\n[-]" + Colors.Color.WHITE + "No {} found in the {} folder\n".format(error,Colors.Color.GREEN + name + Colors.Color.WHITE))
+            print(Colors.Color.RED + "\n[-]" + Colors.Color.WHITE + "No {} in the {} folder\n".format(error,Colors.Color.GREEN + name + Colors.Color.WHITE))
             inp = input("Press enter to continue...")
             Menu.Display.Main()

@@ -57,9 +57,7 @@ class Local:
         found = False
         attempt = 0
         file_names = []
-        for file in os.listdir(filesfolder):
-            if file.endswith(".txt"):
-                file_names.append(file)
+        #Controller.Size.Folder(filesfolder,"Pwd",file_names)
         string = str(input(Colors.Color.GREEN + "\n[+]" + Colors.Color.WHITE + "Insert the password" + Colors.Color.BLUE + "\n\n[Himitsu]" + Colors.Color.WHITE + "-->"))
         foundpass = "" 
         while string == "":
@@ -77,7 +75,7 @@ class Local:
             if type == "base64" or type == "base32":
                 foundpass = Local.base64_decode(string,type)
             else:
-                Controller.Size.Folder(filesfolder,"Pwd")
+                Controller.Size.Folder(filesfolder,"Pwd",file_names)
                 if found == False:
                     for name in file_names:
                         completefile = filesfolder + name
@@ -85,7 +83,8 @@ class Local:
                         sleep(5)
                         num_words = len(list(open(completefile, 'rb')))
                         f = open(completefile, "r", newline=None)
-                        for password in tqdm(f, total=num_words, unit='word',desc= "Cracking Password"):
+                        for password in tqdm(f, total=num_words,desc= "Cracking Password"):
+                            attempt = attempt + 1
                             sleep(0.3)
                             origpassword = password.replace("\n","")
                             pwd = Hashing.Get.Decrypt(type,origpassword)
@@ -95,7 +94,6 @@ class Local:
                                 break
                             else:
                                 found = False
-                            attempt = attempt + 1
                         if found == True:
                             break
                     if foundpass != "":
@@ -114,20 +112,16 @@ class Local:
     def File():
         filesfolder = "Passwords/Default/"
         filesfolder2 = "Files"
-        Controller.Size.Folder(filesfolder,"Pwd")
-        Controller.Size.Folder(filesfolder2,"Files")
+        Controller.Size.Folder(filesfolder2,"Files","")
         found = False
         attempt = 0
         file_names = []
-        for file in os.listdir(filesfolder):
-            if file.endswith(".txt"):
-                file_names.append(file)
-        filesn = ["Default.txt","Apache_user_enum.txt","rockyou.txt"]
+        Controller.Size.Folder(filesfolder,"Pwd",file_names)
         string = str(input(Colors.Color.GREEN + "\n[+]" + Colors.Color.WHITE + "Insert the file to open" + Colors.Color.BLUE + "\n\n[Himitsu]" + Colors.Color.WHITE + "-->"))
         foundpass = "" 
         while string == "":
             string = str(input(Colors.Color.GREEN + "\n[+]" + Colors.Color.WHITE + "Insert the filename" + Colors.Color.BLUE + "\n\n[Himitsu]" + Colors.Color.WHITE + "-->"))
-        print(Colors.Color.GREEN + "\n[+]" + Colors.Color.WHITE + "Input archive: {}".format(Colors.Color.GREEN + string))
+        print(Colors.Color.GREEN + "\n[+]" + Colors.Color.WHITE + "Input archive/file: {}".format(Colors.Color.GREEN + string))
         if string == "Common" or string == "Unknown":
             pass
         else:
@@ -214,13 +208,10 @@ class Online:
     @staticmethod
     def Password():
         filesfolder = "Passwords/Default/"
-        Controller.Size.Folder(filesfolder,"Pwd")
         found = False
         attempt = 1
         file_names = []
-        for file in os.listdir(filesfolder):
-            if file.endswith(".txt"):
-                file_names.append(file)
+        Controller.Size.Folder(filesfolder,"Pwd",file_names)
         reportname = substring = str(input(Colors.Color.GREEN + "\n[+]" + Colors.Color.WHITE + "Insert filename for the output ex 'Example.txt'" + Colors.Color.BLUE + "\n\n[Himitsu]" + Colors.Color.WHITE + "-->"))
         while reportname == "" or reportname.endswith("/") or ".txt" not in reportname:
             reportname = str(input(Colors.Color.GREEN + "\n[+]" + Colors.Color.WHITE + "Insert filename for the output ex 'Example.txt'" + Colors.Color.BLUE + "\n\n[Himitsu]" + Colors.Color.WHITE + "-->"))

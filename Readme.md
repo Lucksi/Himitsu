@@ -23,9 +23,13 @@
 
 **In order to make the password modules works is necessary to add to 'Passwords/Default' a wordlist with .txt extension ex (Example.txt)**
 
+<img src = "Screenshot/Screenshot_List.png">
+
 ## File-Cracker
 
 **Before using this option make sure to add the file that you want to crack in the folder named 'Files'**
+
+<img src = "Screenshot/Screenshot_Files.png">
 
 
 ## Screenshot:

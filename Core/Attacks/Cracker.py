@@ -246,7 +246,7 @@ class Online:
                 while string == "":
                     string = str(input(Colors.Color.GREEN + "\n[+]" + Colors.Color.WHITE + "Insert the url ex 'http://example.com' without the '/' at the end" + Colors.Color.BLUE + "\n\n[Himitsu]" + Colors.Color.WHITE + "-->"))
                 contin = True
-                parms = ""
+                parms = []
             f = open(report,"w")
             f.write("Website: {}\n\n".format(string))
             f.close()

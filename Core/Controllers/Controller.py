@@ -12,6 +12,7 @@ class Size:
     
     @staticmethod
     def Wordlist(name,lists):
+        names = []
         count = 0
         print(Colors.Color.BLUE + "\n[I]" + Colors.Color.WHITE + "Checking valide wordlist...\n")
         sleep(3)
@@ -25,18 +26,48 @@ class Size:
                 for line in reader:
                     count1 = count1 +1
                 if count1 > 0:
-                    lists.append(file)
+                    names.append(file)
                     valid = Colors.Color.GREEN + "True"
                 else:
                     valid = Colors.Color.RED + "False"
                 print(Colors.Color.BLUE + "[I]" + Colors.Color.WHITE + "Filename:{} {}".format(file,valid))
-        if len(lists) > 0:
+        
+        if len(names) > 0:
+            if len(names) > 1:
+                list_choice = int(input(Colors.Color.GREEN + "\n[+]" + Colors.Color.WHITE + "Do you want to use all the wordlists found?(1)Yes(2)No" + Colors.Color.BLUE + "\n\n[Himitsu]" + Colors.Color.WHITE + "-->"))
+                if list_choice == 1:
+                    for element in names:
+                        lists.append(element)
+                else:
+                    count_files = 0
+                    file_num = len(names)
+                    while count_files < file_num:
+                        pwd_file = str(input(Colors.Color.GREEN + "\n[+]" + Colors.Color.WHITE + "Insert the wordlist file 'Insert Stop to finish'" + Colors.Color.BLUE + "\n\n[Himitsu]" + Colors.Color.WHITE + "-->"))
+                        while pwd_file == "":
+                            pwd_file = str(input(Colors.Color.GREEN + "\n[+]" + Colors.Color.WHITE + "Insert the wordlist file 'Insert Stop to finish'" + Colors.Color.BLUE + "\n\n[Himitsu]" + Colors.Color.WHITE + "-->"))
+                        if pwd_file in names:
+                            if pwd_file not in lists:
+                                print(Colors.Color.YELLOW + "\n[v]" + Colors.Color.WHITE + "Wordlist: {} added".format(Colors.Color.GREEN + pwd_file + Colors.Color.WHITE))
+                                lists.append(pwd_file)
+                                count_files = count_files + 1
+                            else:
+                                print(Colors.Color.RED + "\n[-]" + Colors.Color.WHITE + "Wordlist: {} already inserted".format(Colors.Color.GREEN + pwd_file + Colors.Color.WHITE))
+                        elif pwd_file == "Stop":
+                            if len(lists) > 0:
+                                count_files = file_num + 1
+                            else:
+                                print(Colors.Color.RED + "\n[-]" + Colors.Color.WHITE + "Insert at least one wordlist file")
+                        else:
+                            print(Colors.Color.RED + "\n[-]" + Colors.Color.WHITE + "Insert one of the following wordlist file\n")
+                            for element in names:
+                                print(Colors.Color.GREEN + "[+]" + Colors.Color.WHITE + element)
+            else:
+                lists = names
             count = 1
             pass
         else:
             print(Colors.Color.RED + "\n[-]" + Colors.Color.WHITE + "No {} in the {} folder\n".format(error,Colors.Color.GREEN + name + Colors.Color.WHITE))
             inp = input("Press enter to continue...")
-            #Menu.Display.Main()
         return count
 
     @staticmethod
